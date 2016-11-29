@@ -105,7 +105,7 @@ for link in links:
         link_expend = link.text
         if 'Expenditure' in link_expend:
             url = 'http://www.salford.gov.uk/' + link['href']
-            csvfiles = link.text.encode('utf-8')
+            csvfiles = link.text.encode('utf-8').replace('\xc2\xa0', ' ')
             csvfile = csvfiles.split(' ')
             csvYr = csvfile[3]
             csvMth = csvfile[2][:3]
